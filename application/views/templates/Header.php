@@ -48,7 +48,7 @@ header('Content-Type: text/html; charset=UTF-8');
         <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
-        <li> <a href="pagar">Pagar reserva</a></li>
+        <li> <a href="comprar">Pagar reserva</a></li>
         <li> <a href="#">Reasignar reserva</a></li>
         <li> <a href="#">Consultar</a></li>
         <li> <a href="sis">Vuelos Privados</a></li>

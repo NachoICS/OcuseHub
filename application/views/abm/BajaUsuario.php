@@ -18,11 +18,12 @@
 				<p> <b> Contrase&ntildea: <input type="text" name="firstname"> </b> </p>
 				<p> <b> Lugar de nacimiento: <input type="text" name="firstname"> </b> </p>
 				<p> <b>Codigo postal: <input type="text" name="firstname"> </b> </p>
+				
 	
                       </form>
 				<br> </br>
 				<button type="button" class="btn btn-info btn-lg">
-				Dar de baja usuario
+				Inabilitar usuario
 			</button>
 				</div>
 				<div class="col-md-6">
