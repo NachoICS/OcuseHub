@@ -1,7 +1,3 @@
-<script src="../assets/jquery/jquery.js"></script>
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet"> 
-<script src="../assets/js/bootstrap.min.js"></script>
-
 
 
 <div class="container-fluid">

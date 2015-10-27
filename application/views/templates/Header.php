@@ -18,9 +18,9 @@ header('Content-Type: text/html; charset=UTF-8');
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet"> 
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/jquery/jquery.js"></script>
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet"> 
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script src="../../assets/jquery/jquery.js"></script>
 
 
 
@@ -48,10 +48,10 @@ header('Content-Type: text/html; charset=UTF-8');
         <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
-        <li> <a href="reserva/comprar">Pagar reserva</a></li>
-        <li> <a href="#">Reasignar reserva</a></li>
-        <li> <a href="#">Consultar</a></li>
-        <li> <a href="sis">Vuelos Privados</a></li>
+        <li> <a href="ControladorPago/comprarReserva">Pagar reserva</a></li>
+        <li> <a href="ControladorReservaComercial/ReasignarReserva">Reasignar reserva</a></li>
+        <li> <a href="ControladorReserva/cancelarReserva">Cancelar reserva</a></li>
+        <li> <a href="Sis">Vuelos Privados</a></li>
       </ul>
     </li>
   
@@ -63,7 +63,7 @@ header('Content-Type: text/html; charset=UTF-8');
       <ul class="dropdown-menu">
         <li> <a href="#">Reportes.</a></li>
         <li> <a href="#">Cuentas</a></li>
-         <li> <a href="#">Realizar check-in</a></li>
+         <li> <a href="ControladorReservaComercial/realizarCheckIn">Realizar check-in</a></li>
         <li> <a href="#">Ingresar pago</a></li>
       </ul>
     </li>
@@ -90,10 +90,10 @@ header('Content-Type: text/html; charset=UTF-8');
     
  
    <li class="dropdown active" >
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-     Principal
+      <a href="Principal" class="dropdown-toggle" data-toggle="dropdown">
+     Principal  </a>
        
-      </a>
+    
     </li>
  
 

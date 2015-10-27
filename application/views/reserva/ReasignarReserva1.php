@@ -24,10 +24,10 @@
 			
 			
 			<p>
-				<a class="btn" href="#"></a>
+				
 			</p> 
 			<button type="button" class="btn disabled active btn-info btn-lg">
-				<b>Buscar</b>
+			<b>Buscar</b> 
 			</button>
 		</div>
 	</div>

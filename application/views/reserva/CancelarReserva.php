@@ -1,3 +1,12 @@
+
+<script src="../assets/jquery/jquery.js"></script>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet"> 
+<script src="../assets/js/bootstrap.min.js"></script>
+
+
+
+
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -15,6 +24,7 @@
 				<div class="col-md-4">
 				</div>
 				<div class="col-md-4">
+				<br>
 					<div class="panel panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title">

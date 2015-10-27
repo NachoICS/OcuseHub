@@ -11,7 +11,7 @@ class Sis extends CI_Controller{
 		
       
         $this->load-> view('templates/Header');
-		$this->load->view('reserva/ReasignarReserva2');
+		$this->load->view('vuelo/VuelosPrivados');
 		$this->load-> view('templates/Footer');
      
 
