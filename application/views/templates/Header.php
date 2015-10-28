@@ -64,7 +64,7 @@ header('Content-Type: text/html; charset=UTF-8');
         <li> <a href="#">Reportes.</a></li>
         <li> <a href="#">Cuentas</a></li>
          <li> <a href="ControladorReservaComercial/realizarCheckIn">Realizar check-in</a></li>
-        <li> <a href="#">Ingresar pago</a></li>
+        <li> <a href="ControladorPago/comprarReserva">Ingresar pago</a></li>
       </ul>
     </li>
     
@@ -74,15 +74,15 @@ header('Content-Type: text/html; charset=UTF-8');
         <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
-        <li> <a href="#">Quienes somos</a></li>
-        <li> <a href="#">Que es Ocuse</a></li>
-         <li> <a href="#">Politicas de la empresa</a></li>
+        <li> <a href="ControladorAlgunasVistas/QuienesSomos">Quiénes somos</a></li>
+        <li> <a href="ControladorAlgunasVistas/QueEsOcuse">Qué es Ocuse</a></li>
+         <li> <a href="ControladorAlgunasVistas/Politicas">Politicas de la empresa</a></li>
       </ul>
     </li>
     
   
     <li class="dropdown active" >
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <a href="Usuario/login">
      Login
        
       </a>
@@ -90,7 +90,7 @@ header('Content-Type: text/html; charset=UTF-8');
     
  
    <li class="dropdown active" >
-      <a href="Principal" class="dropdown-toggle" data-toggle="dropdown">
+      <a href="" >
      Principal  </a>
        
     

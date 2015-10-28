@@ -20,7 +20,7 @@ class ControladorPago extends CI_Controller{
 	}
 	
 	
-	public function  pagarResreva(){
+	public function  pagarResereva(){
 		
 		
 		
