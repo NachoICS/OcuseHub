@@ -1,5 +1,5 @@
 <?php 
-class  extends CI_Controller{
+class  ControladorAlgunasVistas extends CI_Controller{
 	
 	
 	

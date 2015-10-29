@@ -1,6 +1,9 @@
 <?php
 
-class Avion extends CI_Model{
+class Avion extends DataMapper{
+	
+	var $table = 'avion';
+	
 	
 	private $matricula;
 	private $fecha;
