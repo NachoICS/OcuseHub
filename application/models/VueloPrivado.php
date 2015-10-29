@@ -4,7 +4,88 @@
 class VueloPrivado extends DataMapper{
 	
 	
-	public static function calcular_precio_vuelo_comercial($subida=Aeropuerto,$bajada=Aeropuerto,$modelo=ModeloAvion)
+	var $table='vuelo_privado';
+	
+	var $has_one= array("avion");
+	var $has_one= array("aeropuerto");
+	var $has_one= array("cancelacion");
+	
+	
+	
+	var $validation = array(
+			'id' => array(
+					'label' => 'ID',
+					'rules' => array()
+			),
+			'cod_vuelo_privado' => array(
+					'label' => 'CODIGO DE VUELO PRIVADO',
+					'rules' => array('required')
+			),
+	
+	
+			'avion_id'=>array(
+					'label'=>'Id  de avion'	,
+					'rules'=>array('required')
+	
+			),
+		
+			'fecha_partida'=>array(
+					'label'=>'fecha_partida'	,
+					'rules'=>array('required')
+	
+			),
+			'aeropuerto_partida'=>array(
+					'label'=>'Id  de aeropuerto'	,
+					'rules'=>array('required')
+			
+			),
+			'aeropuerto_llegada'=>array(
+					'label'=>'Id  de aeropuerto'	,
+					'rules'=>array('required')
+			
+			),
+				
+			'cancelacion_id' => array (
+					'label' => 'Id de cliente',
+					'rules' => array ()
+	
+			)
+	
+	
+	
+	
+	);
+	
+	
+	
+	
+	
+	
+	
+	
+	function __construct($id = NULL)
+	{
+		parent::__construct($id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static function calcular_precio_vuelo_privado($subida=Aeropuerto,$bajada=Aeropuerto,$modelo=ModeloAvion)
 	{
 	
 	}
