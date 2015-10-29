@@ -1,7 +1,7 @@
 <?php
 
 
-class VueloPrivado extends CI_Model{
+class VueloPrivado extends DataMapper{
 	
 	
 	public static function calcular_precio_vuelo_comercial($subida=Aeropuerto,$bajada=Aeropuerto,$modelo=ModeloAvion)

@@ -1,6 +1,6 @@
 <?php
 
-class ReservaPrivada extends CI_Model{
+class ReservaPrivada extends DataMapper{
 	
 	
 	

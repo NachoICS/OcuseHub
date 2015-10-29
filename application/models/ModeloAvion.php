@@ -1,6 +1,6 @@
 <?php
 
-class ModeloAvion extends CI_Model {
+class ModeloAvion extends DataMapper {
 	
 	
 private $cod_modelo;

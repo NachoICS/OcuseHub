@@ -1,5 +1,5 @@
 <?php
-class ClaseDePlaza extends CI_Model
+class ClaseDePlaza extends DataMapper
 
 {
 

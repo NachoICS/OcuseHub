@@ -1,6 +1,6 @@
 <?php
 
-class MetodoDePago extends CI_Model{
+class MetodoDePago extends DataMapper{
 	
 	private $cod_metodo; 
 	private $nombre_metodo;

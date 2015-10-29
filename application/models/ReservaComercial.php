@@ -1,7 +1,7 @@
 <?php
 
 
-class ReservaComercial extends CI_Model{
+class ReservaComercial extends DataMapper{
 	
 	
 	

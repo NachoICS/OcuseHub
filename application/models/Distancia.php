@@ -1,6 +1,6 @@
 <?php
 
-class Distancia extends CI_Model {
+class Distancia extends DataMapper {
 	
 	private $cod_aeropuerto; 
 	private $kilometros;

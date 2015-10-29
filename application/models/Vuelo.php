@@ -1,7 +1,7 @@
 <?php
 
 
-class Vuelo extends CI_Model {
+class Vuelo extends DataMapper {
 	
 	private $cod_vuelo;
 	private $fecha_partida;

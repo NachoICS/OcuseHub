@@ -1,6 +1,6 @@
 <?php
 
-class VueloComercial extends CI_Model {
+class VueloComercial extends DataMapper {
 	
 
 	

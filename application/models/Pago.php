@@ -1,6 +1,6 @@
 <?php
 
-class Pago extends CI_Model {
+class Pago extends DataMapper{
 	
 	private $cod_pago;
 	private $fecha_pago;

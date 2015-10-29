@@ -1,6 +1,6 @@
 <?php
 
-class Ruta extends CI_Model{
+class Ruta extends DataMapper{
 	
 	private $cod_ruta;
 	public $tiempo_estimado;

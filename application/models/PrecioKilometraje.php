@@ -1,6 +1,6 @@
 <?php
 
-class PrecioKilometraje extends CI_Model{
+class PrecioKilometraje extends DataMapper{
 	
 	
 	public static $precio_km_comercial;

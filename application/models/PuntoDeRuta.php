@@ -1,7 +1,7 @@
 <?php
 
 
-class PuntoDeRuta extends CI_Model{
+class PuntoDeRuta extends DataMapper{
 	
 	private $punto;
 	private $tiempo_viaje;

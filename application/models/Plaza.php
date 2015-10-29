@@ -1,7 +1,7 @@
 <?php
 
 
-class Plaza extends CI_Model{
+class Plaza extends DataMapper{
 	
 	private $cod_plaza;
 	private $observacion;
