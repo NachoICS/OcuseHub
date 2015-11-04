@@ -1,8 +1,6 @@
-
-<script src="../assets/jquery/jquery.js"></script>
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet"> 
-<script src="../assets/js/bootstrap.min.js"></script>
-
+<link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+<script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>/assets/jquery/jquery.js"></script>
 
 
 

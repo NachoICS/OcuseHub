@@ -4,6 +4,7 @@ class MetodoDePago extends DataMapper{
 	
 	
 	var $table = 'metodo_pago';
+	var $has_many=array("pago");
 
 	
 	var $validation = array(

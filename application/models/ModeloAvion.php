@@ -3,6 +3,7 @@
 class ModeloAvion extends DataMapper {
 	
 	var $table = 'modelo_avion';
+	var $has_many='plaza';
 
 	
 	var $validation = array(

@@ -4,6 +4,7 @@ class Avion extends DataMapper{
 	
 	var $table = 'avion';
 	var $has_one=array("modeloAvion");
+	var $has_many=array("vuelo_comercial","vuelo_privado");
 	
 	
 	

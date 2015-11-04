@@ -13,7 +13,7 @@ class ReservaComercial extends DataMapper{
 	var $has_one= array("plaza");
 	var $has_one= array("pago");
 	var $has_one= array("aeropuerto");
-	var $has_one= array("cancelacion");
+	var $has_many= array("cancelacion");
 	
 	
 	var $validation = array(
@@ -87,6 +87,11 @@ class ReservaComercial extends DataMapper{
 					'label' => 'Id de cliente',
 					'rules' => array ()
 						
+			),
+			'precio_reserva' => array (
+					'label' => 'precio_reserva',
+					'rules' => array ()
+			
 			)
 				
 				

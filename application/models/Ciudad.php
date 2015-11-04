@@ -4,6 +4,7 @@ class Ciudad extends DataMapper{
 	
 	var $table = 'ciudad';
 	var $has_one = array("provincia");
+	var $has_many = array("aeropuerto");
 	
 	var $validation = array(
 			'id' => array(

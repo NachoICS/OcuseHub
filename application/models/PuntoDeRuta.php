@@ -5,13 +5,16 @@ class PuntoDeRuta extends DataMapper{
 	
 	
 	var $table = 'punto_ruta';
-	var $has_one = array("aeropuerto");
-	var $has_one = array("ruta");
+	var $has_one = array("aeropuerto","ruta");
 	
 	var $validation = array(
 			'id' => array(
 					'label' => 'ID',
 					'rules' => array()
+			),
+			'punto' => array(
+					'label' => 'punto',
+					'rules' => array('unique')
 			),
 			'observacion' => array(
 					'label' => 'OBSERVACION',

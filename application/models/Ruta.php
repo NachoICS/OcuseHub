@@ -2,13 +2,18 @@
 
 class Ruta extends DataMapper{
 	
-	var $table = 'ruta';
+	var $table ='ruta';
+    var $has_many='punto_ruta';
 
 	
 	var $validation = array(
 			'id' => array(
 					'label' => 'ID',
 					'rules' => array()
+			),
+			'codigo_ruta' => array(
+					'label' => 'ID',
+					'rules' => array('unique','required')
 			)
 			);
 	

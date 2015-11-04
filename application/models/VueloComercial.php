@@ -19,7 +19,7 @@ class VueloComercial extends DataMapper {
 			),
 			'cod_vuelo_comercial' => array(
 					'label' => 'CODIGO DE VUELO COMERCIAL',
-					'rules' => array('required')
+					'rules' => array('required','unique')
 			),
 	
 	

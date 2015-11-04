@@ -4,11 +4,16 @@ class Pago extends DataMapper{
 	
 	var $table = 'pago';
 	var $has_one = array("metodo_pago");
+	var $has_many=array("reserva_comercial");
 	
 	var $validation = array(
 			'id' => array(
 					'label' => 'ID',
 					'rules' => array()
+			),
+			'codigo_pago' => array(
+					'label' => 'Codigo de pago',
+					'rules' => array('unique')
 			),
 			'fecha_pago' => array(
 					'label' => 'FECHA_PAGO',

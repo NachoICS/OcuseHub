@@ -12,6 +12,10 @@ class Plaza extends DataMapper{
 					'label' => 'ID',
 					'rules' => array()
 			),
+			'codigo_plaza' => array(
+					'label' => 'codigo de plaza',
+					'rules' => array()
+			),
 			'observacion' => array(
 					'label' => 'OBSERVACION',
 					'rules' => array('required')

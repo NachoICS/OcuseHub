@@ -3,11 +3,16 @@
 class Cancelacion extends DataMapper{
 	
 	var $table='cancelacion';
+	var $has_one=array("reserva_comercial","vuelo_comercial");
 	
 	var $validation = array(
 			'id' => array(
 					'label' => 'ID',
 					'rules' => array()
+			),
+			'cod_cancelacion' => array(
+					'label' => 'Codigo de cancelacion',
+					'rules' => array('unique')
 			),
 			'motivo' => array(
 					'label' => 'MOTIVO',

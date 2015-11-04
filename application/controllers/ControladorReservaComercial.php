@@ -10,7 +10,7 @@ public function reasignarReserva(){
 	
 	
 	
-		$this->load-> view('templates/Header');
+	//	$this->load-> view('templates/Header');
 		$this->load->view('reserva/ReasignarReserva1');
 		$this->load-> view('templates/Footer');
 	

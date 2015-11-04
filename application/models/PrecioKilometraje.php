@@ -12,6 +12,7 @@ class PrecioKilometraje extends DataMapper{
 					'label' => 'ID',
 					'rules' => array()
 			),
+			
 			'campo_de_integridad' => array(
 					'label' => 'CAMPO_DE_INTEGRIDAD',
 					'rules' => array('required')

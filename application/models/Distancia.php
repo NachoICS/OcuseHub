@@ -2,8 +2,17 @@
 
 class Distancia extends DataMapper {
 	
-	var $table='Distancia';
-	var $has_many= array("aeropuerto");
+	var $table='distancia';
+	var $has_one = array(
+		'aeropuerto_1' => array(
+			'class' => 'aeropuerto',
+			'join_other_as' => 'aeropuerto_1',
+		),
+		'aeropuerto_2' => array(
+			'class' => 'aeropuerto',
+			'join_other_as' => 'aeropuerto_2',
+		)
+	);
 	
 	
 	var $validation = array(
@@ -11,12 +20,12 @@ class Distancia extends DataMapper {
 					'label' => 'ID',
 					'rules' => array()
 			),
-			'aeropuerto_destino' => array(
-					'label' => 'aeropuerto destino',
+			'aeropuerto_1' => array(
+					'label' => 'aeropuerto 1',
 					'rules' => array('required')
 			),
-			'aeropuerto_llegada' => array (
-					'label' => 'aeropuerto llegada',
+			'aeropuerto_2' => array (
+					'label' => 'aeropuerto 2',
 					'rules' => array (
 							'required'
 					)

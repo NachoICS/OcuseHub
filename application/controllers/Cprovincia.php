@@ -9,7 +9,7 @@ class Cprovincia extends CI_Controller{
         $this->load-> view('templates/Header');
 
         $pr= new Provincia();
-        $pr->nombre_provincia="Chubut";
+        $pr->nombre_provincia="Buenos Aires";
         
         if($pr->save()){
         	echo "Se guardo";
