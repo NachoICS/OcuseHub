@@ -1,44 +1,32 @@
 <?php
-class clase_plaza extends DataMapper
+class Clase_plaza extends DataMapper 
 
 {
-	
-	var $table='clase_plaza';
-	var $has_many=array("plaza");
-	
-	var $validation = array(
-			'id' => array(
+	var $table = 'CLASE_PLAZA';
+	var $has_many = array (
+			"plaza" 
+	);
+	var $validation = array (
+			'id' => array (
 					'label' => 'ID',
-					'rules' => array()
+					'rules' => array () 
 			),
-			'nombre_clase' => array(
+			'nombre_clase' => array (
 					'label' => 'NOMBRE DE CLASE',
-					'rules' => array('required')
+					'rules' => array (
+							'required' 
+					) 
 			),
 			'descripcion_clase' => array (
 					'label' => 'DESCRIPCION DE CLASE',
 					'rules' => array (
-							'required'
-					)
-			)
+							'required' 
+					) 
+			) 
 	);
-	
-	
-	
-	
-	function __construct($id = NULL)
-	{
-		parent::__construct($id);
+	function __construct($id = NULL) {
+		parent::__construct ( $id );
 	}
-	
-	
-	
-	
-	
-	
-
-
-
-
-
+	function post_model_init($from_cache = FALSE) {
+	}
 }

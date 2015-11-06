@@ -1,7 +1,3 @@
-<link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-<script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/jquery/jquery.js"></script>
-
 
 <div class="container-fluid">
 	<div class="row">
@@ -21,18 +17,40 @@
 						</div>
 						<div class="panel-body">
 						
-			<p>	 <b>C&oacutedigo de tu reserva:</b>  <input type="text" name="codigoDeReserva"> </p>
-			<p>	 <b>Nombre del pasajero:</b>  <input type="text" name="nombrePasajero"> </p>
-			<p>	 <b>Apellido del pasajero:</b>  <input type="text" name="apellidoPasajero"> </p>			
-						<p> </p>
-							<button type="button" class="btn btn-info btn-default">
-				<b>Buscar</b>
-			</button>
-						
-						
-						</div>
+						<?php  echo form_open("ControladorReserva/buscarReserva", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
 				
-				</div>
+						
+							<p>
+								<div class="form-group">
+								<label class="control-label" for= "txtCodigoReserva"><b>C&oacutedigo de tu reserva:</b> 
+								</label>
+								<input type="text"	class="form-control" name="txtCodigoReserva" id="txtCodigoReserva" required="required">
+								</div>							
+							</p>
+							<p>
+								<div class="form-group">
+								<label class="control-label" for= "txtNombrePasajero"><b>Nombre del Pasajero:</b> 
+								 
+								</label>
+								<input type="text"	class="form-control" name="txtNombrePasajero" id="txtNombrePasajero" required="required">
+								
+								</div>							
+							</p>
+							<p>
+								<div class="form-group">
+								<label class="control-label" for= "txtNombrePasajero"><b>Apellido del Pasajero:</b> 
+								
+								</label>
+								<input type="text"	class="form-control" name="txtApellidoPasajero" id="txtApellidoPasajero" required="required">
+								
+								</div>	
+							</p>
+							<p></p>
+							<button type="submit" name="bus" class="btn btn-info btn-default">
+								<b>Buscar</b>
+							</button>
+							
+							<?php echo form_close();?>
 				<div class="col-md-4">
 				
 						

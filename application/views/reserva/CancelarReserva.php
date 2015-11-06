@@ -1,10 +1,3 @@
-<link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-<script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/jquery/jquery.js"></script>
-
-
-
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -12,11 +5,11 @@
 				<p> </p>
 				<b>CANCEL&Aacute TU RESERVA</b>
 			</h3>
-			<dl>
-				<dt>
+			
+			
 				Para cancelar tu reserva deber&aacutes ingresar tus datos en el formulario.
 					
-				</dt>
+			
 				
 			<div class="row">
 				<div class="col-md-4">
@@ -30,14 +23,41 @@
 							</h3>
 						</div>
 						<div class="panel-body">
-					<p>	 <b>C&oacutedigo de tu reserva:</b>  <input type="text" name="codigoDeReserva"> </p>
-			<p>	 <b>Nombre del pasajero:</b>  <input type="text" name="nombrePasajero"> </p>
-			<p>	 <b>Apellido del pasajero:</b>  <input type="text" name="apellidoPasajero"> </p>			
-						<p> </p>
-							<button type="button" class="btn btn-info btn-default">
-				<b>Buscar</b>
-			</button>
 						
+						<?php  echo form_open("ControladorReserva/mostrarCancelarReserva1", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
+				
+						
+							<p>
+								<div class="form-group">
+								<label class="control-label" for= "txtCodigoReserva" required=”required”><b>C&oacutedigo de tu reserva:</b> 
+								</label>
+								<input type="text"class="form-control" name="txtCodigoReserva" id="txtCodigoReserva" required="required"/>
+								</div>							
+							</p>
+							<p>
+								<div class="form-group">
+								<label class="control-label" for= "txtNombrePasajero" required=”required”><b>Nombre del Pasajero:</b> 
+								 
+								</label>
+								<input type="text"	class="form-control" name="txtNombrePasajero" id="txtNombrePasajero" required="required"/>
+								
+								</div>							
+							</p>
+							<p>
+								<div class="form-group">
+								<label class="control-label" for= "txtApellidoPasajero" required=”required”><b>Apellido del Pasajero:</b> 
+								
+								</label>
+								<input type="text"	class="form-control" name="txtApellidoPasajero" id="txtApellidoPasajero" required="required"/>
+								
+								</div>	
+							</p>
+							<p></p>
+							<button type="submit" name="bus" class="btn btn-info btn-default">
+								<b>Buscar</b>
+							</button>
+							
+							<?php echo form_close();?>	
 						
 						</div>
 						

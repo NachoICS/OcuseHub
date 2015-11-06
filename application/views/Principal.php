@@ -1,7 +1,9 @@
-<?php include 'templates/header.php'?>
-<link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-<script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/jquery/jquery.js"></script>
+
+<script>
+  webshims.setOptions('waitReady', false);
+  webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.polyfill('forms forms-ext');
+</script>
 
 
 <div class="container-fluid">
@@ -22,14 +24,15 @@
 					</h3>
 				</div>
 				<div class="panel-body">
-					<div class="input-group">
+				<?php  echo form_open("index.php/ControladorVueloComercial/consultarVuelosDisponibles", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
+					<div class="form-group">
 						<label class="control-label" for="origen">ORIGEN</label> 
 						<select id="origen" name="origen" class="selectpicker">
 							<?php
 								$ciu = new Ciudad ();
 								$ciu->order_by ( 'nombre_ciudad' );
 								foreach ( $ciu->get () as $row ) {
-									echo '<option value="nombre_ciudad">' . $row->nombre_ciudad . '</option>';
+									echo '<option value="nombre_ciudad">' . $row->nombre_ciudad .'</option>';
 								}
 							?>
 						</select>
@@ -38,10 +41,10 @@
 						<label class="control-label" for="id_destino">DESTINO</label> 
 						<select id="destino" name="destino">
 							<?php
-								$ciu = new Ciudad ();
+							$ciu = new Ciudad ();
 								$ciu->order_by ( 'nombre_ciudad' );
 								foreach ( $ciu->get () as $row ) {
-									echo '<option value="nombre_ciudad">' . $row->nombre_ciudad . '</option>';
+									echo '<option value="nombre_ciudad">' . $row->nombre_ciudad .'</option>';
 								}
 							?>		
 						</select>
@@ -61,7 +64,7 @@
 						?>
 						</select>
 					</div>
-					<p><span class="label label-info">CANTIDAD</span></p> 
+					<p><span class="label label-info">CANTIDAD</span>
 					<div class="form-group">
 					<select id="cantidad" name="cantidad">
 						<option value="01">01</option>
@@ -74,16 +77,19 @@
 						<option>08</option>
 						<option>09</option>
 					</select>
+					</p> 
 					</div>
+					
 					<div class="panel-footer">
 						<button type="button" class="btn btn-lg btn-info btn-block">
 							<b>CONSULTAR</b>
 						</button>
+						<?php echo form_close();?>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<?php include 'templates/Footer.php'?>
+
 
