@@ -7,6 +7,7 @@
 			<th>Código de Reserva</th>
 			<th>Nombre Cliente</th>
 			<th>Apellido Cliente</th>
+			<th>Informacion Fecha de Pago</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -21,6 +22,7 @@ foreach ( $rc as $row ) {
 	echo '<td>' . $row->id . '</td>';
 	echo '<td>' . $row->nombre_cliente . '</td>';
 	echo '<td>' . $row->apellido_cliente . '</td>';
+	echo '<td>' . $row->pago->get()->fecha_pago.'</td>';
 	?>
 	<td><a class="btn btn-info" onclick="javascript:pagarReserva('<?=$nombre ?>')">Pagar Reserva</a></td>
 	<?php 

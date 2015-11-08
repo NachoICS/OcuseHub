@@ -26,19 +26,31 @@
 				<div class="panel-body">
 				<?php  echo form_open("index.php/ControladorVueloComercial/consultarVuelosDisponibles", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
 					<div class="form-group">
-						<label class="control-label" for="origen">ORIGEN</label> 
+						<label class="control-label" for="origen">CIUDAD ORIGEN</label> 
 						<select id="origen" name="origen" class="selectpicker">
 							<?php
 								$ciu = new Ciudad ();
 								$ciu->order_by ( 'nombre_ciudad' );
 								foreach ( $ciu->get () as $row ) {
-									echo '<option value="nombre_ciudad">' . $row->nombre_ciudad .'</option>';
+									echo '<option value="',$row->id,'">' . $row->nombre_ciudad.' ', ' . $row->provincia->get()->nombre_provincia .  </option>';
+								}
+							?>
+						</select>
+					</div>
+						<div class="form-group">
+						<label class="control-label" for="origen">PROVINCIA ORIGEN</label> 
+						<select id="origen" name="origen" class="selectpicker">
+							<?php
+								$pro= new provincia ();
+								$pro->order_by ( 'nombre_provincia' );
+								foreach ( $pro->get () as $row ) {
+									echo '<option value="nombre_provincia">' . $row->nombre_provincia .'</option>';
 								}
 							?>
 						</select>
 					</div>
 					<div class="form-group">
-						<label class="control-label" for="id_destino">DESTINO</label> 
+						<label class="control-label" for="id_destino">CIUDAD DESTINO</label> 
 						<select id="destino" name="destino">
 							<?php
 							$ciu = new Ciudad ();
@@ -49,21 +61,21 @@
 							?>		
 						</select>
 					</div>
-
-					<p><span class="label label-info">FECHA</span> <input type="date" name="fecha"/></p>
-					<div class="form-group">
-						<label class="control-label" for="id_clase_plaza">CLASE DE PLAZA</label>
-						<select id="nombre_clase" name="nombre_clase">
-			
-						<?php
-							$cp = new clase_plaza();
-					//		$cp->order_by ( 'nombre_clase' );
-							foreach ( $cp->get () as $row ) {
-								echo '<option value="nombre_clase">' . $row->nombre_clase . '</option>';
-							}
-						?>
+							<div class="form-group">
+						<label class="control-label" for="origen">PROVINCIA DESTINO</label> 
+						<select id="origen" name="origen" class="selectpicker">
+							<?php
+								$pro= new provincia ();
+								$pro->order_by ( 'nombre_provincia' );
+								foreach ( $pro->get () as $row ) {
+									echo '<option value="nombre_provincia">' . $row->nombre_provincia .'</option>';
+								}
+							?>
 						</select>
 					</div>
+
+					<p><span class="label label-info">FECHA</span> <input type="date" name="fecha"/></p>
+			
 					<p><span class="label label-info">CANTIDAD</span>
 					<div class="form-group">
 					<select id="cantidad" name="cantidad">

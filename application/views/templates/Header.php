@@ -42,7 +42,7 @@
 						<li><a href="<?php echo base_url(); ?>index.php/ControladorReservaComercial/realizarCheckIn">Realizar
 								check-in</a></li>
 									<li><a href="<?php echo base_url(); ?>index.php/cAdministrador/vistaVuelosACAncelar">Cancelar vuelo</a></li>
-						<li><a href="<?php echo base_url(); ?>index.php/cAdministrador">Cancelar reserva</a></li>
+						<li><a href="<?php echo base_url(); ?>index.php/cAdministrador/cancelar_reserva">Cancelar reserva</a></li>
 						<li><a href="<?php echo base_url(); ?>index.php/cAdministrador/vistaABM">Reprogramar vuelo</a></li>
 						<li><a href="<?php echo base_url(); ?>index.php/cAdministrador/ingresarPago">Ingresar pago</a></li>
 				

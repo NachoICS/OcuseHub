@@ -21,7 +21,10 @@ class ControladorReserva extends CI_Controller{
 		$nombre=$this->input->post('txtNombrePasajero');
 		$apellido=$this->input->post('txtApellidoPasajero');
 		$rc = new Reserva_comercial();
-		$rc-> where('id', $codigo,'nombre_cliente',$nombre,'apellido_cliente',$apellido)->get();
+		$rc-> where('id', $codigo)->get();
+		$rc->where('nombre_cliente',$nombre)->get();
+		$rc->where('apellido_cliente',$apellido)->get();
+	
 // 		return $rc;
 		$data= array('rc'=> $rc);
 		
@@ -79,7 +82,7 @@ class ControladorReserva extends CI_Controller{
 		$motivo=$this->input->post('txtMotivoCancelacion');
 		$can->motivo=$motivo;
 		
-		$idReserva=$this->input->post('IdReserva');
+		$idReserva=$this->input->post('id');
 		$res= new Reserva_comercial();
 		$res->where('id',$idReserva)->get(1);
 		
@@ -126,12 +129,21 @@ class ControladorReserva extends CI_Controller{
 		*/
 	}
 		
+	function cancelar_reserva(){
+		$can= new Cancelacion();
+		$can->motivo = "Fue cancelado";
+		$idReserva = $this->input->post('id_reserva');
+		$res= new Reserva_comercial();
+		$res->where('id',$idReserva)->get();
+		if ($can->save()){
+			$res->cancelacion_id = $res->id;
+			$res->save();
+			echo "si";
+		}
+		else {
+			echo "no";
+		}
+		
 	
-	
-	
-	
-	
-	
-	
-	
+	}
 }

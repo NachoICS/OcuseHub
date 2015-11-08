@@ -10,22 +10,14 @@ class Cancelacion extends DataMapper {
 					'label' => 'ID',
 					'rules' => array () 
 			),
-			'cod_cancelacion' => array (
-					'label' => 'Codigo de cancelacion',
-					'rules' => array (
-							'unique' 
-					) 
-			),
 			'motivo' => array (
 					'label' => 'MOTIVO',
 					'rules' => array (
-							'required' 
 					) 
 			),
 			'fecha_cancelacion' => array (
 					'label' => 'FECHA DE CANCELACION',
 					'rules' => array (
-							'required' 
 					) 
 			) 
 	);

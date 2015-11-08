@@ -4,16 +4,18 @@
 class cAdministrador extends CI_Controller{
 	
 	public function index(){
-		$this->load-> view('templates/Header');
-		$this->load->view('Administrador/consultar_reservas_a_cancelar');
-		$this->load-> view('templates/Footer');
+
 	}
 	
 	public function cancelar() {
 		$this->load-> view('cancelar_reserva');
 	}
 	
-	
+	public function cancelar_reserva() {
+		$this->load-> view('templates/Header');
+		$this->load->view('Administrador/consultar_reservas_a_cancelar');
+		$this->load-> view('templates/Footer');
+	}
 	
 	public function  vistaReportes(){
 		$this->load-> view('templates/Header');
@@ -29,7 +31,7 @@ class cAdministrador extends CI_Controller{
 	
 	public function vistaVuelosACAncelar(){
 		$this->load->view('templates/Header');
-		$this->load->view('Administrador/consultar_vuelos_a_cancelar');
+		$this->load->view('Administrador/consultar_vuelos_cancelar');
 		$this->load->view('templates/Footer');
 		
 	}

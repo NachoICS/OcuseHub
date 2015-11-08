@@ -1,15 +1,23 @@
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<h3 class="text-info">
-				<b>REASIGNAR RESERVA</b>
+			<h3 class="text-primary">
+				<p> </p>
+				<b>REASIGNA TU RESERVA</b>
 			</h3>
-			
-				<div class="row">
+			<dl>
+				<dt>
+				Para reasignar tu reserva deber&aacutes ingresar tus datos en el formulario.
+					
+				</dt>
+				
+			<div class="row">
 				<div class="col-md-4">
 				</div>
 				<div class="col-md-4">
-				<div class="panel panel-info">
+				<br>
+					<div class="panel panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title">
 								<b>INGRESA LOS SIGUENTE DATOS</b>
@@ -17,14 +25,14 @@
 						</div>
 						<div class="panel-body">
 						
-						<?php  echo form_open("ControladorReserva/buscarReserva", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
+						<?php  echo form_open("ControladorReservaComercial/mostrarReasignarReserva", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
 				
 						
 							<p>
 								<div class="form-group">
 								<label class="control-label" for= "txtCodigoReserva"><b>C&oacutedigo de tu reserva:</b> 
 								</label>
-								<input type="text"	class="form-control" name="txtCodigoReserva" id="txtCodigoReserva" required="required">
+								<input type="text"	class="form-control" name="txtCodigoReserva" id="txtCodigoReserva" required="required" >
 								</div>							
 							</p>
 							<p>
@@ -50,24 +58,15 @@
 								<b>Buscar</b>
 							</button>
 							
-							<?php echo form_close();?>
-
-
+							<?php echo form_close();?>	
+						
 						</div>
-
+						
 					</div>
-				
-				
-				
-				
-				
 				</div>
 				<div class="col-md-4">
 				</div>
 			</div>
-
-					</div>
-			
-						
 		</div>
 	</div>
+</div>

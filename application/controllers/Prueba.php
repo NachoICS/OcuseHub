@@ -6,8 +6,14 @@ class Prueba extends CI_Controller{
 
 	public function index(){
      $provi = new provincia();
-     $provi->reinitialize_model();
-		
+
+     $provi->nombre_provincia = $this->input->post('Rio Negro');
+   if ($c->save ()) {
+     	echo "Se guardo";
+     } else {
+     	echo "No se Guardo";
+     }
+     
 		
 	}
 }

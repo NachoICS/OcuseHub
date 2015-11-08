@@ -29,13 +29,13 @@ class aeropuerto extends DataMapper {
 					) 
 			),
 			
-			'fecha_fabricacion' => array (
+			'nombre_aeropuerto' => array (
 					'label' => 'NOMBRE DE AEROPUERTO',
 					'rules' => array (
 							'required' 
 					) 
 			),
-			'fecha_adquisicion' => array (
+			'ciudad_id' => array (
 					'label' => 'Id de ciudad',
 					'rules' => array (
 							'required' 

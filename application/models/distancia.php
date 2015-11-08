@@ -1,5 +1,5 @@
 <?php
-class distancia extends DataMapper {
+class Distancia extends DataMapper {
 	var $table = 'DISTANCIA';
 	var $has_one = array (
 			'aeropuerto_1' => array (

@@ -4,8 +4,9 @@ class Vuelo_comercial extends DataMapper {
 	var $has_one = array (
 			'avion',
 			'ruta',
-			'cancelacion' 
 	);
+	
+	var $has_many = array('cancelacion');
 	var $validation = array (
 			'id' => array (
 					'label' => 'ID',

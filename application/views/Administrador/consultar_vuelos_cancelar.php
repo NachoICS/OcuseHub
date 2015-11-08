@@ -5,25 +5,29 @@
 			cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					<th>Código de Reserva</th>
-					<th>Nombre Cliente</th>
-					<th>Apellido Cliente</th>
+					<th>Código de vuelo</th>
+					<th>Avion</th>
+					<th>Ruta</th>
+					<th>Fecha de partida:</th>
 					<th></th>
 				</tr>
 			</thead>
 
 			<tbody id="myID">
 				<?php
-				$rc = new reserva_comercial ();
-				$rc->get ();
-				$rc->where('cancelacion_id',null)->get();
-				foreach ( $rc as $row ) {
-					$nombre = $row->nombre_cliente;
-					$boton = '<a data-toggle="modal" class="btn btn-danger" href="#ventanaModal" >Cancelar Reserva</a>';
+				$vc = new Vuelo_comercial();
+				$vc->get ();
+				$vc->where('cancelacion_id',null)->get();
+				foreach ( $vc as $row ) {
+					$codigo_vuelo_comercial = $row->id;
+					$boton = '<a data-toggle="modal" class="btn btn-danger" href="#ventanaModal" >Cancelar Vuelo</a>';
 					echo '<tr>';
 					echo '<td>' . $row->id . '</td>';
-					echo '<td>' . $row->nombre_cliente . '</td>';
-					echo '<td>' . $row->apellido_cliente . '</td>';
+					echo  '<td>' . $row->avion->get()->matricula.'</td>';
+					echo '<td>' . $row->ruta_id . '</td>';
+					echo '<td>' . $row->fecha_partida . '</td>';
+					
+				
 					echo '<td>' . $boton . '</td>';
 					echo '</tr>';
 				}
@@ -37,9 +41,8 @@
 <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
 <script>
 //VARIABLES GLOBALES
-var id_reserva;
-var nombre;
-var apellido;
+var id_vuelo;
+
 
 //FUNCIONES
 $(document).ready(function() {
@@ -47,14 +50,11 @@ $(document).ready(function() {
 
 	$('#myID').on('click', '.btn-danger', function(event) {
 		event.preventDefault();
+		// padre del botón: td
+		// padre del td: tr
 		var linea = $(this).parent().parent();
-		var idReserva = linea.children(":first");
-		id_reserva=idReserva.html();
-		console.log(id_reserva + " es la reserva");
-		nombre = idReserva.next();
-		console.log(nombre.text());
-		apellido =nombre.next();
-		console.log(apellido.text());	
+		id_vuelo = linea.children(":first").html();
+		console.log(id_vuelo + " es el vuelo");
 	});
 
 	$('#ventanaModal').on('show.bs.modal',function(event){
@@ -63,15 +63,18 @@ $(document).ready(function() {
 		modal.find('.modal-footer>#cancelar').text("Cancelar");//Inicializo el nombre al botón
 		modal.find('.modal-footer>#aceptar').show();
 		modal.find('.modal-footer>#cancelar').show();
-		modal.find('.modal-title').text("Confirmar cancelación de reserva");
-		modal.find('.modal-body').html("<h3>¿Esta seguro de que desea cancelar la reserva de "+nombre.text() +" "+apellido.text()+" ?</h3>");
+		modal.find('.modal-title').text("Motivo de la cancelación");
+		modal.find('.modal-body').load('http://localhost/OcuseHub/index.php/Administrador/cancelar_vuelo');
+		//modal.find('.modal-title').text("Confirmar cancelación del vuelo");
+ 		//modal.find('.modal-body').html("<h3>¿Esta seguro de que desea cancelar el vuelo "+id_vuelo+" ?</h3>");
 	});	
 
-	$('#aceptar').on('click',function(event){	
-	    	$.post('<?php echo base_url();?>index.php/ControladorReserva/cancelar_reserva/', 
-	    			{id_reserva:id_reserva}, 
+	$('#aceptar').on('click',function(event){
+			console.log(id_vuelo);
+	    	$.post('<?php echo base_url(); ?>index.php/ControladorVuelo/cancelar_vuelo/', 
+	    			{id_vuelo: id_vuelo}, 
 	    			function(resultado) {
-		    			if(resultado=="si"){
+		    			if (resultado == "si") {
 		    			var modal=$('#ventanaModal');
 		    			modal.find('.modal-title').text("Mensaje de Información");
 	    				modal.find('.modal-body').text("La cancelación ha sido exitosa");
@@ -89,7 +92,8 @@ $(document).ready(function() {
  						modal.find('.modal-footer>#cancelar').text("Aceptar");//cambio el nombre al botón aceptar para que al "Aceptar" 
  						//se cierre la ventana modal
 						}
-			});	
+					}
+			);	
 	});
 });
 

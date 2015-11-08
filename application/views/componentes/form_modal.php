@@ -9,8 +9,8 @@
 <!-- 				<h3>¿Esta seguro de que desea cancelar la reserva?</h3> -->
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-primary">Confirmar</button>
-				<a href="#" class="btn btn-danger" data-dismiss="modal">Cancelar</a>
+				<button id="aceptar"class="btn btn-primary">Aceptar</button>
+				<a id="cancelar" href="#" class="btn btn-danger" data-dismiss="modal">Cancelar</a>
 			</div>
 		</div>
 	</div>

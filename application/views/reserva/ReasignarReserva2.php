@@ -1,8 +1,3 @@
-<script src="../assets/jquery/jquery.js"></script>
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet"> 
-<script src="../assets/js/bootstrap.min.js"></script>
-
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
@@ -13,74 +8,47 @@
 					 <h3><b> FUTUROS VUELOS DISPONIBLES:</b></h3>	
 					</h3>
 				</div>
-				<div class="panel-body">
-					<h3><b>Vuelo xxxx, Fecha Salida: xxxx, Horario salida:xxxx </b></h3>
-					<div>
-					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3><button type="button" class="btn btn-info">
-				<b>Reasginar Reserva</b>
-			</button> </p>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<h3><b>Vuelo xxxx, Fecha Salida: xxxx, Horario salida:xxxx </b></h3>
-					<div>
-					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3><button type="button" class="btn btn-info">
-				<b>Reasginar Reserva</b>
-			</button> </p>
-					</div>
-				</div>
-					<div class="panel-body">
-					<h3><b>Vuelo xxxx, Fecha Salida: xxxx, Horario salida:xxxx </b></h3>
-					<div>
-					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3><button type="button" class="btn btn-info">
-				<b>Reasginar Reserva</b>
-			</button> </p>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<h3><b>Vuelo xxxx, Fecha Salida: xxxx, Horario salida:xxxx </b></h3>
-					<div>
-					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3><button type="button" class="btn btn-info">
-				<b>Reasginar Reserva</b>
-			</button> </p>
-					</div>
-				</div>
-					<div class="panel-body">
-					<h3><b>Vuelo xxxx, Fecha Salida: xxxx, Horario salida:xxxx </b></h3>
-					<div>
-					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3><button type="button" class="btn btn-info">
-				<b>Reasginar Reserva</b>
-			</button> </p>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<h3><b>Vuelo xxxx, Fecha Salida: xxxx, Horario salida:xxxx </b></h3>
-					<div>
-					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3><button type="button" class="btn btn-info">
-				<b>Reasginar Reserva</b>
-			</button> </p>
-					</div>
-				</div>
-			<div class="panel-body">
-					<h3><b>Vuelo xxxx, Fecha Salida: xxxx, Horario salida:xxxx </b></h3>
-					<div>
-					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3><button type="button" class="btn btn-info">
-				<b>Reasginar Reserva</b>
-			</button> </p>
-					</div>
-				</div>
-				<div class="panel-footer">
-				<h3><b>Vuelo xxxx, Fecha Salida: xxxx, Horario salida:xxxx </b></h3>
-					<div>
-					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3><button type="button" class="btn btn-info">
-				<b>Reasginar Reserva</b>
-			</button> </p>
-					</div>
-				</div>
+				
+				<?php 
+				
+				foreach ($posiblesvuelos as $row){
+ 				echo form_open("ControladorReservaComercial/confirmarReasignarReserva", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
+				
 			
+				<div class="panel-body">
+					<h3><b>Vuelo <?php echo $row->id?>, Fecha Salida: <?php echo $row->fecha_partida?></b></h3>
+					<div>
+					<h3><p><b>Plaza:xxxx , Precio:$xxxxx ,Libres:x</b> </h3>
+				
+				
+					<button type="submit" class="btn btn-info" name="REASIGNAR_RESERVA">
+						<b>Reasginar Reserva</b>
+					</button>
+			 </p>
+					</div>
+				</div>
+					<input type="hidden" value=<?php echo $row->id?>
+							class="form-control" name="IdVuelo" id="IdVuelo">
+					
+					<input type="hidden" value=<?php echo $rc->id?>
+							class="form-control" name="IdReserva" id="IdReserva">
+					
+				
+				
+				<?php echo form_close();}?>	
+				
+					
 				
 			</div> 
-		
+		<div class="col-md-6">
+			
+			<?php form_open("ControladorReservaComercial/reasignarReserva", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
+						
+				<button type="submit" class="btn btn-info" name="VOLVER">
+					<b>Cancelar</b>
+				</button>
+				<?php echo form_close();?>
+		</div>
 		</div>
 		<div class="col-md-6">
 		</div>

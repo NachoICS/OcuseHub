@@ -34,7 +34,7 @@ foreach ( $rc as $row ) {
 </table>
 </div>
 </div>
-</div>
+
 
 <script>
 $(document).ready(function() {
@@ -42,7 +42,7 @@ $(document).ready(function() {
 } );
 
 function pagarReserva(nombre){
-	confirm("Esta seguro que desea pagar la reserva de "+ nombre +"?");
+	confirm("Esta seguro que desea realizar el check-in de la reserva de "+ nombre +"?");
 }
 
 </script>
