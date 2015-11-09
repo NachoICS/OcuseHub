@@ -58,43 +58,14 @@ $(document).ready(function() {
 	});
 
 	$('#ventanaModal').on('show.bs.modal',function(event){
-		var modal=$(this);
+		var modal = $(this);
 		modal.find('.modal-footer>#aceptar').text("Aceptar");//Inicializo el nombre al botón
 		modal.find('.modal-footer>#cancelar').text("Cancelar");//Inicializo el nombre al botón
-		modal.find('.modal-footer>#aceptar').show();
-		modal.find('.modal-footer>#cancelar').show();
+		modal.find('.modal-footer').hide();
 		modal.find('.modal-title').text("Motivo de la cancelación");
-		modal.find('.modal-body').load('http://localhost/OcuseHub/index.php/Administrador/cancelar_vuelo');
-		//modal.find('.modal-title').text("Confirmar cancelación del vuelo");
- 		//modal.find('.modal-body').html("<h3>¿Esta seguro de que desea cancelar el vuelo "+id_vuelo+" ?</h3>");
+		modal.find('.modal-body').load('http://localhost/OcuseHub/index.php/ControladorVuelo/cancelar');
 	});	
-
-	$('#aceptar').on('click',function(event){
-			console.log(id_vuelo);
-	    	$.post('<?php echo base_url(); ?>index.php/ControladorVuelo/cancelar_vuelo/', 
-	    			{id_vuelo: id_vuelo}, 
-	    			function(resultado) {
-		    			if (resultado == "si") {
-		    			var modal=$('#ventanaModal');
-		    			modal.find('.modal-title').text("Mensaje de Información");
-	    				modal.find('.modal-body').text("La cancelación ha sido exitosa");
-		    			modal.find('.modal-footer').show();
-		    			modal.find('.modal-footer>#aceptar').hide();
- 		    			modal.find('.modal-footer>#cancelar').text("Aceptar");//cambio el nombre al botón aceptar para que al "Aceptar" 
- 		    			//se cierre la ventana modal
- 		    			window.location.reload(true);
-		    			}
-		    			else{
-						modal.find('.modal-title').text("Mensaje de Información");
-						modal.find('.modal-body').text("Ha ocurrido un error durante la cancelación");
-						modal.find('.modal-footer').show();
-						modal.find('.modal-footer>#aceptar').hide();
- 						modal.find('.modal-footer>#cancelar').text("Aceptar");//cambio el nombre al botón aceptar para que al "Aceptar" 
- 						//se cierre la ventana modal
-						}
-					}
-			);	
-	});
+	
 });
 
 

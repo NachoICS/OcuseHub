@@ -79,7 +79,7 @@ $(document).ready(function() {
 		    			modal.find('.modal-footer>#aceptar').hide();
  		    			modal.find('.modal-footer>#cancelar').text("Aceptar");//cambio el nombre al botón aceptar para que al "Aceptar" 
  		    			//se cierre la ventana modal
- 		    			window.location.reload(true);
+//  		    			window.location.reload(true);
 		    			}
 		    			else{
 						modal.find('.modal-title').text("Mensaje de Información");
