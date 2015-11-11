@@ -12,13 +12,20 @@
 					<th></th>
 				</tr>
 			</thead>
-
 			<tbody id="myID">
 				<?php
 				$vc = new Vuelo_comercial();
 				$vc->get ();
+				$this->load->helper('date');
+				$fechaHoraActual=date("Y-m-d H:i:s");
+				//$fecha_partida=$vc->fecha_partida;
+				
 				$vc->where('cancelacion_id',null)->get();
+			
+				
 				foreach ( $vc as $row ) {
+					$fecha_partida=$row->fecha_partida;
+					if ( $fechaHoraActual<$fecha_partida){	
 					$codigo_vuelo_comercial = $row->id;
 					$boton = '<a data-toggle="modal" class="btn btn-danger" href="#ventanaModal" >Cancelar Vuelo</a>';
 					echo '<tr>';
@@ -30,6 +37,7 @@
 				
 					echo '<td>' . $boton . '</td>';
 					echo '</tr>';
+				}
 				}
 				?>
 			</tbody>

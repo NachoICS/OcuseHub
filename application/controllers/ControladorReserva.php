@@ -130,6 +130,7 @@ class ControladorReserva extends CI_Controller{
 	}
 		
 	function cancelar_reserva(){
+		
 		$can= new Cancelacion();
 		$can->motivo = "Fue cancelado";
 		$idReserva = $this->input->post('id_reserva');
@@ -143,6 +144,21 @@ class ControladorReserva extends CI_Controller{
 		else {
 			echo "no";
 		}
+// 		$cancelacion = new Cancelacion();
+// 		$motivo = "Fue cancelado";
+// 		$idReerva = $this->input->post('id_reserva');
+// 		$cancelacion->motivo = $motivo;
+// 		$reserva_comercial = new reserva_comercial();
+// 		if ($cancelacion->save()) {
+// 			$reserva_comercial->where('id', $idReserva);
+// 			$reserva_comercial->update('cancelacion_id', $cancelacion->id);
+// 			echo "si";
+// 		}
+// 		else {
+// 			$reserva = $reserva_comercial->where('id', $idReserva)->get();
+// 			echo $reserva->fecha_partida;
+// 			echo $reserva->cancelacion_id;
+// 		}
 		
 	
 	}

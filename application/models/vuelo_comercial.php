@@ -6,7 +6,7 @@ class Vuelo_comercial extends DataMapper {
 			'ruta',
 	);
 	
-	var $has_many = array('cancelacion');
+	var $has_many = array('cancelacion','reserva_comercial');
 	var $validation = array (
 			'id' => array (
 					'label' => 'ID',
@@ -37,7 +37,7 @@ class Vuelo_comercial extends DataMapper {
 			,
 			
 			'cancelacion_id' => array (
-					'label' => 'Id de cliente',
+					'label' => 'Id de cancelacion',
 					'rules' => array () 
 			)
 			 

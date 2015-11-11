@@ -16,6 +16,7 @@
 <?php
 $rc = new reserva_comercial ();
 $rc->get ();
+$rc->where('pago_id',null)->get();
 foreach ( $rc as $row ) {
 	$nombre=$row->nombre_cliente;
 	echo '<tr>';

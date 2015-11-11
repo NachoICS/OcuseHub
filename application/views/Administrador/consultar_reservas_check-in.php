@@ -13,8 +13,15 @@
 
 <tbody>        
 <?php
-$rc = new reserva_comercial ();
-$rc->get ();
+$rc = new reserva_comercial();
+$pago = new Pago();
+$rc->where('cancelacion_id', null);
+$rc->where('pago_id >', 0);
+
+$rc->where_related('vuelo_comercial', 'cancelacion_id', null)->get();
+
+
+
 foreach ( $rc as $row ) {
 	$nombre=$row->nombre_cliente;
 	echo '<tr>';

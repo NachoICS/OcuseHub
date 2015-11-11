@@ -135,11 +135,44 @@ public function reasignarVuelo(){
 
 }
 
+public function  ingresar_datos_cliente(){
+	//$this->input->post('destino');
+	//$data= array('vuelosValidos'=>$vuelosValidos,
+						//'cant_pasajeros'=>$cant_pasajeros
+							//);
+	$vueloElegido=$this->input->post('IdVuelo');
+// 	$cant_pasajeros=$this->session->userdata('cant_pasajeros');
+// 	session_start();
+	
+	$data=array('idVuelo'=>$vueloElegido);
+	$this->load->view('templates/Header');
+	$this->load->view ( 'reserva/Ingreso_datos_clientes',$data);
+	$this->load->view('templates/Footer');
+}
+
 
 public function seleccionarPlaza($idPlaza){}
 
 
-public function realizarReserva($codVuelo,$vecDatosPasajeros){}
+public function realizarReserva(){
+	$cant_pasajeros=$this->input->post('cant_pasajeros');
+	session_start();
+	
+	
+	for ($i = 1; $i<=$_SESSION['cant_pasajeros']; $i++) {
+	$reserva= new Reserva_comercial();
+	$reserva->nombre_cliente=$this->input->post('txtNombre'.$i);
+	$reserva->apellido_cliente=$this->input->post('txtApellido'.$i);
+	$reserva->email_cliente=$this->input->post('txtCorreo'.$i);
+	$reserva->telefono=$this->input->post('txtTelefono'.$i);
+	$reserva->dni_cliente=$this->input->post('txtDni'.$i);
+	$reserva->telefono=$this->input->post('txtTelefono'.$i);
+	$reserva->telefono=$this->input->post('txtTelefono'.$i);
+	
+	
+	
+	}
+}
 	
 	
 	

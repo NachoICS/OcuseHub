@@ -3,7 +3,8 @@
 class Ruta extends DataMapper{
 	
 	var $table ='RUTA';
-    var $has_many=array('punto_ruta');
+	
+    var $has_many=array('ruta_ciudad');
     
 	var $validation = array(
 			'id' => array(

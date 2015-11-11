@@ -24,31 +24,28 @@
 					</h3>
 				</div>
 				<div class="panel-body">
-				<?php  echo form_open("index.php/ControladorVueloComercial/consultarVuelosDisponibles", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
+				<?php  echo form_open("ControladorVueloComercial/consultarVuelosDisponibles", array ('class'=> 'form-horizontal', 'id'=>'formPrincipal' ))?>
 					<div class="form-group">
 						<label class="control-label" for="origen">CIUDAD ORIGEN</label> 
 						<select id="origen" name="origen" class="selectpicker">
-							<?php
-								$ciu = new Ciudad ();
+						<?php
+							$ciu = new Ciudad ();
 								$ciu->order_by ( 'nombre_ciudad' );
 								foreach ( $ciu->get () as $row ) {
-									echo '<option value="',$row->id,'">' . $row->nombre_ciudad.' ', ' . $row->provincia->get()->nombre_provincia .  </option>';
+ 								$provincia= new provincia();
+ 								$provincia->where('id',$row->provincia_id)->get();
+ 									echo '<option value="',$row->id,'">' . $row->nombre_ciudad.', '.$provincia->nombre_provincia.'</option>';
+									
+									//echo '<option value="nombre_ciudad">' .$row->provincia->nombre_provincia.'</option>';
+				//					$row->provincia->nombre_provincia;
+				//					$row->check_last_query();
+				//					echo $ciu->check_last_query();
+									//echo '<option value="nombre_ciudad">' . $row->nombre_ciudad.','.$row->provincia->nombre_provincia.'</option>';
 								}
-							?>
+							?>		
 						</select>
 					</div>
-						<div class="form-group">
-						<label class="control-label" for="origen">PROVINCIA ORIGEN</label> 
-						<select id="origen" name="origen" class="selectpicker">
-							<?php
-								$pro= new provincia ();
-								$pro->order_by ( 'nombre_provincia' );
-								foreach ( $pro->get () as $row ) {
-									echo '<option value="nombre_provincia">' . $row->nombre_provincia .'</option>';
-								}
-							?>
-						</select>
-					</div>
+						
 					<div class="form-group">
 						<label class="control-label" for="id_destino">CIUDAD DESTINO</label> 
 						<select id="destino" name="destino">
@@ -56,44 +53,39 @@
 							$ciu = new Ciudad ();
 								$ciu->order_by ( 'nombre_ciudad' );
 								foreach ( $ciu->get () as $row ) {
-									echo '<option value="nombre_ciudad">' . $row->nombre_ciudad .'</option>';
+									$provincia= new provincia();
+									$provincia->where('id',$row->provincia_id)->get();
+									echo '<option value="',$row->id,'">' . $row->nombre_ciudad.', '.$provincia->nombre_provincia.'</option>';
+									
+									
+									
+									//echo '<option value="nombre_ciudad">' . $row->nombre_ciudad .'</option>';
 								}
 							?>		
 						</select>
 					</div>
-							<div class="form-group">
-						<label class="control-label" for="origen">PROVINCIA DESTINO</label> 
-						<select id="origen" name="origen" class="selectpicker">
-							<?php
-								$pro= new provincia ();
-								$pro->order_by ( 'nombre_provincia' );
-								foreach ( $pro->get () as $row ) {
-									echo '<option value="nombre_provincia">' . $row->nombre_provincia .'</option>';
-								}
-							?>
-						</select>
-					</div>
+						
 
-					<p><span class="label label-info">FECHA</span> <input type="date" name="fecha"/></p>
+					<p><span class="label label-info">FECHA</span> <input type="date" name="fecha"  id="fecha"/></p>
 			
 					<p><span class="label label-info">CANTIDAD</span>
 					<div class="form-group">
 					<select id="cantidad" name="cantidad">
-						<option value="01">01</option>
-						<option>02</option>
-						<option>03</option>
-						<option>04</option>
-						<option>05</option>
-						<option>06</option>
-						<option>07</option>
-						<option>08</option>
-						<option>09</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
 					</select>
 					</p> 
 					</div>
 					
 					<div class="panel-footer">
-						<button type="button" class="btn btn-lg btn-info btn-block">
+						<button type="submit" class="btn btn-lg btn-info btn-block">
 							<b>CONSULTAR</b>
 						</button>
 						<?php echo form_close();?>
@@ -103,5 +95,12 @@
 		</div>
 	</div>
 </div>
+
+
+
+
+
+
+
 
 

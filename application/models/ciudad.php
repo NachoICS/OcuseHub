@@ -5,7 +5,7 @@ class Ciudad extends DataMapper {
 		'provincia' 
 	);
 	var $has_many = array (
-			'aeropuerto' 
+			'aeropuerto' ,'ruta_ciudad'
 	);
 	var $validation = array (
 			'id' => array (

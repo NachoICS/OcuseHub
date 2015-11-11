@@ -87,6 +87,12 @@ class Reserva_comercial extends DataMapper {
 					'label' => 'email_cliente',
 					'rules' => array () 
 			),
+			
+			'telefono' => array (
+					'label' => 'numero de telefono',
+					'rules' => array (
+							
+					),
 			'cancelacion_id' => array (
 					'label' => 'cancelacion_id',
 					'rules' => array () 

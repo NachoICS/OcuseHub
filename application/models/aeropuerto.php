@@ -13,7 +13,7 @@ class aeropuerto extends DataMapper {
 					'class' => 'distancia',
 					'join_self_as' => 'aeropuerto 2' 
 			),
-			'punto_ruta',
+			'ruta_aeropuerto',
 			'reserva_comercial' 
 	);
 	var $validation = array (
